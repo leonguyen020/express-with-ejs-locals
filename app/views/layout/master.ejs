@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
+        <title><%- blocks.title %></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+        <%- stylesheets %>
+        <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
-        <%-body -%>
+        
+        <!-- <div id="preloader">
+            <div class="loader"></div>
+        </div> -->
+        <div class="page-container">
+
+            <%- partial('./partials/sideNavigation') %>
+            <div class="main-content">
+                <%- partial('./partials/topArea') %>
+                <%- body -%>
+            </div>
+            <%- partial('./partials/footer') %>
+        </div>
+
+        <%-scripts%>
     </body>
 </html>

@@ -4,6 +4,8 @@ var home = require('../app/controllers/home');
 
 module.exports = function (app, passport) {
 
+    app.get('/index',home.index);
+
     app.get('/login', home.login);
     // app.get('/signup', home.signup);
 

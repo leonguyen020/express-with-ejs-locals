@@ -1,4 +1,5 @@
 var express = require('express');
+var engine = require('ejs-locals');
 
 var app = express();
 var multer = require('multer')
@@ -40,6 +41,10 @@ app.use(cookieParser()); // read cookies (needed for auth)
 
 //view engine setup
 app.use(express.static(path.join(__dirname, 'public')));
+
+// use ejs-locals for all ejs templates:
+app.engine('ejs', engine);
+
 app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'ejs');
 //app.set('view engine', 'ejs'); // set up ejs for templating
