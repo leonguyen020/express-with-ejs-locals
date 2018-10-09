@@ -23,11 +23,11 @@ exports.loggedIn = function(req, res, next)
 exports.dashboard = function(req, res) {
 	
 	
-	res.render('index', {
+	res.render('pages/dashboard/index', {
 		error : req.flash("error"),
 		success: req.flash("success"),
 		session:req.session,
-		title:"Index Page"
+		username: req.user.name
 	 });
 	 
 }
